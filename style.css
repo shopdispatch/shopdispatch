@@ -269,3 +269,102 @@ h3 {
     gap: 0.35rem;
   }
 }
+
+/* Issue cards */
+.issue-card {
+  display: block;
+  padding: 2rem;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--accent);
+  background: var(--surface);
+  color: inherit;
+  text-decoration: none;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.issue-card:hover,
+.issue-card:focus-visible {
+  border-color: var(--accent);
+  background: #243239;
+  color: inherit;
+}
+
+.issue-card h3 {
+  margin-bottom: 0.75rem;
+  color: var(--ink);
+}
+
+.issue-card p:last-child {
+  margin-bottom: 0;
+  color: var(--muted);
+}
+
+.latest-teaser {
+  padding: clamp(3rem, 8vw, 5rem) 0 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.latest-teaser .narrow {
+  padding-bottom: clamp(3rem, 8vw, 5rem);
+}
+
+.latest-teaser h2 {
+  margin-bottom: 1.5rem;
+  font-size: clamp(1.5rem, 3.5vw, 2rem);
+}
+
+/* Article / prose */
+.article h1 {
+  margin-bottom: 1rem;
+  font-size: clamp(2rem, 5vw, 3.25rem);
+}
+
+.prose {
+  margin-top: 2.5rem;
+  color: var(--ink);
+  font-size: 1.05rem;
+}
+
+.prose h2 {
+  margin-top: 2.75rem;
+  margin-bottom: 1rem;
+  font-size: clamp(1.35rem, 3vw, 1.75rem);
+}
+
+.prose p {
+  margin-bottom: 1.25rem;
+}
+
+.prose strong {
+  color: #f0f4f6;
+  font-weight: 700;
+}
+
+.prose em {
+  font-style: italic;
+}
+
+.prose ol,
+.prose ul {
+  margin: 0 0 1.5rem;
+  padding-left: 1.35rem;
+  color: var(--ink);
+}
+
+.prose li {
+  margin-bottom: 0.65rem;
+}
+
+.prose li::marker {
+  color: var(--accent);
+}
+
+.prose .sources {
+  padding-left: 1.15rem;
+}
+
+.prose .sources li {
+  margin-bottom: 0.5rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
