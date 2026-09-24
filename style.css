@@ -478,6 +478,58 @@ h3 {
   font-size: 0.9rem;
 }
 
+.waitlist-form {
+  margin: 2rem 0 1.5rem;
+  padding: clamp(1.25rem, 3vw, 2rem);
+  border: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.waitlist-form .form-field + .form-field {
+  margin-top: 1rem;
+}
+
+.waitlist-form label {
+  display: block;
+  margin-bottom: 0.4rem;
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.waitlist-form label span {
+  color: var(--muted);
+  font-weight: 400;
+}
+
+.waitlist-form input:not([type="hidden"]),
+.waitlist-form select {
+  width: 100%;
+  padding: 0.7rem 0.75rem;
+  border: 1px solid var(--line);
+  border-radius: 0.3rem;
+  background: var(--background);
+  color: var(--ink);
+  font: inherit;
+}
+
+.waitlist-form input:not([type="hidden"]):focus-visible,
+.waitlist-form select:focus-visible {
+  outline: 2px solid var(--accent-strong);
+  outline-offset: 2px;
+}
+
+.waitlist-form button {
+  margin-top: 1.25rem;
+  font: inherit;
+  cursor: pointer;
+}
+
+.waitlist-microcopy {
+  margin: 0.75rem 0 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
 @media (max-width: 640px) {
   .offer-cta-grid {
     grid-template-columns: 1fr;

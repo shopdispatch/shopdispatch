@@ -122,13 +122,44 @@
           <li>Fix the broken move before peak season does it for you.</li>
         </ol>
 
-        <h2>Soft next step (optional)</h2>
+        <section id="waitlist" class="waitlist-section" aria-labelledby="waitlist-title">
+          <h2 id="waitlist-title">After-hours intake that books—not just takes a message</h2>
 
-        <p>If you want a future ShopDispatch after-hours / AI intake tool that follows this same checklist—answer, qualify, say the fee, book to real capacity, escalate, log—you can join an <strong>interest waitlist</strong>. The tool is <strong>not built yet</strong>. No product demo, no charge, no spam. Just a signal that this problem is worth solving for shops like yours.</p>
+          <p>Issue #1 is the playbook: answer on overflow, qualify fast, say the fee, book to real capacity, escalate edge cases, and log what bounced. A lot of shops still lose the emergency premium between first ring and a confirmed job.</p>
 
-        <p>The interest waitlist and email capture aren’t live yet. For now, keep the checklist and use it with your team.</p>
+          <p>We’re exploring a ShopDispatch after-hours / AI intake tool built around that same checklist. <strong>It isn’t live yet.</strong> If you want early word when we have something real to show (and a free After-Hours Intake Checklist in the meantime), leave your email. Interest only—no product pitch spam, no charge, no fake demo.</p>
 
-        <p class="offer-footer-note"><em>ShopDispatch · Practical AI &amp; ops tips for trade shops</em><br><em>Companion to Issue #1: emergency speed premium / after-hours intake</em><br><em>Draft asset — not live email capture until approved</em></p>
+          <form class="waitlist-form" action="https://formspree.io/f/xaenjkrg" method="POST">
+            <div class="form-field">
+              <label for="waitlist-email">Work email (shop owner or ops lead)</label>
+              <input id="waitlist-email" name="email" type="email" autocomplete="email" required>
+            </div>
+
+            <div class="form-field">
+              <label for="waitlist-shop">Shop name <span>(optional)</span></label>
+              <input id="waitlist-shop" name="shop" type="text" autocomplete="organization">
+            </div>
+
+            <div class="form-field">
+              <label for="waitlist-trade">Trade <span>(optional)</span></label>
+              <select id="waitlist-trade" name="trade">
+                <option value="">Select a trade</option>
+                <option value="HVAC">HVAC</option>
+                <option value="plumbing">Plumbing</option>
+                <option value="electrical">Electrical</option>
+                <option value="roofing">Roofing</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <input type="hidden" name="source_page" value="https://shopdispatch.github.io/shopdispatch/offers/after-hours-intake-checklist/">
+            <input type="hidden" name="_subject" value="ShopDispatch interest waitlist">
+            <button class="button button-primary" type="submit">Join the interest waitlist</button>
+            <p class="waitlist-microcopy">Tool not built yet. We’ll only email about this waitlist and related ShopDispatch notes. Unsubscribe anytime.</p>
+          </form>
+        </section>
+
+        <p class="offer-footer-note"><em>ShopDispatch · Practical AI &amp; ops tips for trade shops</em><br><em>Companion to Issue #1: emergency speed premium / after-hours intake</em></p>
       </div>
     </article>
   </main>
