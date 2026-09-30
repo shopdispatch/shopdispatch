@@ -299,6 +299,12 @@ h3 {
   color: var(--muted);
 }
 
+
+.issue-list .issue-card + .issue-card,
+.latest-teaser .issue-card + .issue-card {
+  margin-top: 1.25rem;
+}
+
 .latest-teaser {
   padding: clamp(3rem, 8vw, 5rem) 0 0;
   border-bottom: 1px solid var(--line);
