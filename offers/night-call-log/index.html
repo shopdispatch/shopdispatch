@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Free night-call log template (Excel / Google Sheets / CSV) for HVAC and plumbing shops: fee, real capacity, outcome, and the ten Issue #4 reason codes, with a weekly summary.">
+  <title>Night-Call Log Template | ShopDispatch</title>
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="wordmark" href="../../index.html" aria-label="ShopDispatch home">ShopDispatch</a>
+      <nav aria-label="Primary navigation">
+        <a href="../../posts/index.html">Issues</a>
+        <a href="../../offers/index.html">Free tools</a>
+        <a href="https://x.com/shopdispatch">X <span class="sr-only">(opens in a new tab)</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-main">
+    <article class="article container narrow">
+      <p class="eyebrow">Free template · Excel, Google Sheets, or CSV · companion to Issue #4</p>
+      <h1>Night-Call Log Template</h1>
+      <p class="offer-meta">ShopDispatch · one row per after-hours contact · same reason codes as Issue #4</p>
+      <p class="intro">A free log for whoever covers nights and overflow. Fee stated, capacity actually checked, booked or not, and one reason code when it didn’t book. The weekly tab does the Friday math.</p>
+      <p class="actions"><a class="button button-primary" href="night-call-log.xlsx" download>Download the .xlsx</a> <a class="button button-secondary" href="night-call-log.csv" download>Download the .csv</a></p>
+      <div class="prose">
+        <h2>What’s in it</h2>
+        <ul class="checklist">
+          <li><strong>Log tab</strong> — one row per contact. Dropdowns on <code>reason_code</code>, <code>outcome</code>, <code>capacity_check_status</code>, and the Y/N columns.</li>
+          <li><strong>Weekly summary tab</strong> (.xlsx) — type a week start date. It counts calls, booked, each reason code, never-bookable vs. bookable-but-lost, and the booking rate.</li>
+          <li><strong>One EXAMPLE row</strong>, highlighted, so you can see a filled line. Delete it before real use. The summary ignores it either way.</li>
+        </ul>
+        <h2>Into Google Sheets</h2>
+        <ol>
+          <li><strong>Easiest:</strong> upload the .xlsx to Google Drive, then open it with Google Sheets (or File → Import → Upload in a blank sheet, choose “Replace spreadsheet”). Dropdowns and the summary tab come with it.</li>
+          <li><strong>CSV only:</strong> in a blank Google Sheet, File → Import → Upload → <code>night-call-log.csv</code> → “Replace current sheet.” Then add dropdowns yourself: select the <code>reason_code</code> column, Data → Data validation → Dropdown, and paste the eleven codes below. Do the same for <code>outcome</code>.</li>
+          <li>Type dates as <code>2026-10-12</code> style so the weekly tab can read them.</li>
+          <li>Keep the sheet private. Don’t paste its link anywhere public.</li>
+        </ol>
+        <h2>The booking-rate math</h2>
+        <p><strong>booked ÷ (booked + bookable-but-lost)</strong>. Never-bookable calls (A–D) stay out of it. “Other” stays out too until you read the line and decide which pile it belongs in. Put the never-bookable count next to the rate every Friday, so the rate can’t quietly improve by moving calls into the excused pile.</p>
+        <h2>Reason codes (unbooked calls only)</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th scope="col">Code</th><th scope="col">Pile</th><th scope="col">Means</th></tr></thead>
+            <tbody>
+              <tr><td><code>A_not_customer</code></td><td>Never bookable</td><td>Not a customer call</td></tr>
+              <tr><td><code>B_existing_job</code></td><td>Never bookable</td><td>Existing job or bill</td></tr>
+              <tr><td><code>C_outside_area</code></td><td>Never bookable</td><td>Outside our area</td></tr>
+              <tr><td><code>D_work_we_dont_do</code></td><td>Never bookable</td><td>Work we don’t do</td></tr>
+              <tr><td><code>E_fee_declined</code></td><td>Bookable but lost</td><td>Fee declined</td></tr>
+              <tr><td><code>F_wanted_price_first</code></td><td>Bookable but lost</td><td>Wanted a price first</td></tr>
+              <tr><td><code>G_no_slot_that_worked</code></td><td>Bookable but lost</td><td>No slot that worked</td></tr>
+              <tr><td><code>H_calling_back</code></td><td>Bookable but lost</td><td>Calling back / thinking it over</td></tr>
+              <tr><td><code>I_needs_decider</code></td><td>Bookable but lost</td><td>Needs spouse, owner, or landlord</td></tr>
+              <tr><td><code>J_other_quotes</code></td><td>Bookable but lost</td><td>Getting other quotes</td></tr>
+              <tr><td><code>Other</code></td><td>—</td><td>One line in <code>notes</code>, in the caller’s words</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Outcome codes: <code>confirmed</code>, <code>structured_handoff</code>, <code>escalate</code>, <code>no_verified_slot</code>, <code>declined_after_fee</code>, <code>abandoned</code>, <code>incomplete_qualify</code>.</p>
+        <p>Rule of the sheet: never mark <code>booked = Y</code> unless <code>capacity_check_status = verified_available</code> with a time in <code>capacity_checked_at</code>. Prefer a clear “no slot” over a fake hold. The <a href="../../offers/after-hours-intake-checklist/">After-Hours Intake Checklist</a> explains each move, and the <a href="../../offers/call-scripts/">call scripts</a> give the words.</p>
+        <p class="offer-footer-note"><em>ShopDispatch · free template, no email needed · it’s a spreadsheet, not a booking product</em></p>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; 2026 ShopDispatch</p>
+      <p><a href="../../offers/index.html">Free tools</a> · <a href="../../posts/index.html">All issues</a> · <a href="../../index.html">Back home</a></p>
+    </div>
+  </footer>
+</body>
+</html>

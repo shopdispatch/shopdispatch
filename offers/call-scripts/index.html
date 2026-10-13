@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Free word-for-word scripts for after-hours calls: how to state the fee before promising a truck, and how to honestly say there’s no slot and escalate.">
+  <title>After-Hours Fee and No-Slot Call Scripts | ShopDispatch</title>
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="wordmark" href="../../index.html" aria-label="ShopDispatch home">ShopDispatch</a>
+      <nav aria-label="Primary navigation">
+        <a href="../../posts/index.html">Issues</a>
+        <a href="../../offers/index.html">Free tools</a>
+        <a href="https://x.com/shopdispatch">X <span class="sr-only">(opens in a new tab)</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-main">
+    <article class="article container narrow">
+      <p class="eyebrow">Free scripts · companion to Issues #1, #2 and #4</p>
+      <h1>After-Hours Fee and No-Slot Scripts</h1>
+      <p class="offer-meta">ShopDispatch · word-for-word lines for the two hardest after-hours moments</p>
+      <p class="intro">Two moments decide a lot of night calls: saying the fee, and saying you don’t have a slot. Here are the exact lines. Fill the blanks from your shop’s written rules before the night starts — don’t make up policy on the call.</p>
+      <div class="prose">
+        <h2>Fill these in first</h2>
+        <ul class="checklist">
+          <li>After-hours / emergency fee: exact amount or formula, and when it applies.</li>
+          <li>One named person who can authorize a book tonight.</li>
+          <li>Where real capacity lives tonight (board, sheet, calendar).</li>
+          <li>Escalate list: triggers (gas smell, no heat with medical risk, electrical fire risk, active flooding) and who gets the handoff.</li>
+        </ul>
+        <p>If the fee or the booker is blank, don’t promise a truck. Take the details and escalate.</p>
+
+        <h2>1. Stating the fee — before any truck promise</h2>
+        <blockquote><p>“Because this is after hours, our dispatch fee is <strong>[fee]</strong>. That covers getting a tech out for this visit under our after-hours rules. Are you okay with that fee if we can get you a real slot?”</p></blockquote>
+        <ul class="checklist">
+          <li><strong>Yes:</strong> log fee stated and acknowledged. Move on to checking capacity.</li>
+          <li><strong>No, or they hesitate:</strong> don’t argue. “Understood. Our regular-hours option is <strong>[next daytime option]</strong>. Want me to put you down for a call first thing?” If nothing books, log <code>declined_after_fee</code> and reason <code>E_fee_declined</code>.</li>
+          <li><strong>They want a repair price:</strong> “I can’t give an honest repair price without a tech seeing it. What I can tell you is the visit fee: <strong>[fee]</strong>.” If they won’t go ahead, the reason is <code>F_wanted_price_first</code>.</li>
+          <li><strong>You already talked about a truck and forgot the fee:</strong> stop. “Before we go further, I should have said this first: the after-hours fee is <strong>[fee]</strong>. Still want the visit?” Never leave the fee for the tech at the door.</li>
+        </ul>
+
+        <h2>2. Saying there’s no slot — honestly</h2>
+        <p>Only confirm a window after you (or the named booker) check real capacity. Stale, missing, or conflicting capacity means no verified slot.</p>
+        <p><strong>If there’s a real slot:</strong></p>
+        <blockquote><p>“I have a real window of <strong>[window the shop can keep]</strong>. I’ll put you in for that. You’ll get <strong>[callback / text]</strong> confirming. What’s the best number if the tech needs anything?”</p></blockquote>
+        <p><strong>If there isn’t:</strong></p>
+        <blockquote><p>“I don’t have a verified open slot I can promise right now, and I won’t fake a hold. Here’s what I <em>can</em> do: <strong>[next real option / first-thing callback / on-call lead]</strong>. I’m logging this so dispatch sees it first thing.”</p></blockquote>
+        <p>Log <code>booked = N</code>, <code>no_verified_slot</code>, reason <code>G_no_slot_that_worked</code>. G is usually a capacity decision, so it’s the owner’s to look at on Friday, not the phone person’s fault.</p>
+        <p><strong>If they’d rather wait for regular hours and nothing gets booked:</strong> reason <code>H_calling_back</code>, note “wants regular hours.” If a morning slot does go on the board, it’s booked and gets no code.</p>
+
+        <h2>3. Escalating</h2>
+        <blockquote><p>“This needs a named person on our side right away. I’m contacting <strong>[name/role]</strong> now with your address, the problem, the fee, and what we’ve agreed. You’ll hear from <strong>[them / us]</strong> at <strong>[callback number]</strong>.”</p></blockquote>
+        <p>Hand off the full packet: address, issue, fee status, what the caller agreed to, callback number. The caller should know someone is on it, and who.</p>
+
+        <h2>Short closes</h2>
+        <ul class="checklist">
+          <li><strong>Booked:</strong> “You’re set for <strong>[window]</strong>. Fee noted. We’ll use <strong>[number]</strong> if anything changes.”</li>
+          <li><strong>Not booked:</strong> “Logged. No fake hold. Next step is <strong>[X]</strong>.”</li>
+          <li><strong>Escalated:</strong> “Handed to <strong>[name]</strong>. Stay by <strong>[number]</strong>.”</li>
+        </ul>
+
+        <h2>Never promise on the call</h2>
+        <ul class="checklist">
+          <li>A truck, ETA, or “hold” without a checked capacity row.</li>
+          <li>A diagnosis, parts availability, or a final repair price.</li>
+          <li>Anything outside your written fee and escalate rules.</li>
+        </ul>
+        <p>Log each call in the <a href="../../offers/night-call-log/">Night-Call Log</a> or circle it on the <a href="../../offers/reason-card/">Reason Card</a>. The full six moves are on the <a href="../../offers/after-hours-intake-checklist/">After-Hours Intake Checklist</a>.</p>
+        <p class="offer-footer-note"><em>ShopDispatch · free scripts, no email needed · written for a human on the phone</em></p>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; 2026 ShopDispatch</p>
+      <p><a href="../../offers/index.html">Free tools</a> · <a href="../../posts/index.html">All issues</a> · <a href="../../index.html">Back home</a></p>
+    </div>
+  </footer>
+</body>
+</html>
