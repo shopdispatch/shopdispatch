@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Free word-for-word scripts for after-hours calls: how to state the fee before promising a truck, and how to honestly say there’s no slot and escalate.">
-  <title>After-Hours Fee and No-Slot Call Scripts | ShopDispatch</title>
+  <meta name="description" content="Free word-for-word scripts for daytime and after-hours calls: how to state the fee once with what it covers, how to answer price-first callers, and how to honestly say there’s no slot and escalate.">
+  <title>Fee and No-Slot Call Scripts | ShopDispatch</title>
   <link rel="stylesheet" href="../../style.css">
 </head>
 <body>
@@ -22,29 +22,60 @@
   <main class="page-main">
     <article class="article container narrow">
       <p class="eyebrow">Free scripts · companion to Issues #1, #2 and #4</p>
-      <h1>After-Hours Fee and No-Slot Scripts</h1>
-      <p class="offer-meta">ShopDispatch · word-for-word lines for the two hardest after-hours moments</p>
-      <p class="intro">Two moments decide a lot of night calls: saying the fee, and saying you don’t have a slot. Here are the exact lines. Fill the blanks from your shop’s written rules before the night starts — don’t make up policy on the call.</p>
+      <h1>Fee and No-Slot Scripts</h1>
+      <p class="offer-meta">ShopDispatch · word-for-word lines for the hardest moments on daytime and after-hours calls</p>
+      <p class="intro">A few moments decide a lot of calls, day or night: saying the fee, answering “how much?”, and saying you don’t have a slot. Here are the exact lines. Fill the blanks from your shop’s written rules before the phones open — don’t make up policy on the call.</p>
       <div class="prose">
         <h2>Fill these in first</h2>
         <ul class="checklist">
+          <li>Daytime trip / diagnostic fee: exact amount, and what it covers (for example: getting a tech out, finding the problem, a written price before any work starts).</li>
           <li>After-hours / emergency fee: exact amount or formula, and when it applies.</li>
+          <li>For each fee: is it credited toward the repair if they go ahead? Yes or no. Write it down so everyone says it the same way.</li>
+          <li>Replacement range, only if your shop has decided on one in writing. If not, leave it out.</li>
           <li>One named person who can authorize a book tonight.</li>
           <li>Where real capacity lives tonight (board, sheet, calendar).</li>
           <li>Escalate list: triggers (gas smell, no heat with medical risk, electrical fire risk, active flooding) and who gets the handoff.</li>
         </ul>
         <p>If the fee or the booker is blank, don’t promise a truck. Take the details and escalate.</p>
+        <p>If your shop does free inspections or estimates, skip the fee lines and say that instead.</p>
 
-        <h2>1. Stating the fee — before any truck promise</h2>
-        <blockquote><p>“Because this is after hours, our dispatch fee is <strong>[fee]</strong>. That covers getting a tech out for this visit under our after-hours rules. Are you okay with that fee if we can get you a real slot?”</p></blockquote>
+        <h2 id="fee">1. Stating the fee — once, up front</h2>
+        <p>Say the fee once, before any truck promise, with what it covers and whether it comes off the bill. Pick the credited or not-credited sentence from your written rules and use it every time.</p>
+        <p><strong>Daytime trip / diagnostic fee:</strong></p>
+        <blockquote><p>“Our tech will diagnose it and give you a written price before any work starts. There’s a <strong>[daytime fee]</strong> trip fee that covers <strong>[what it covers]</strong>. <strong>[If credited:]</strong> It comes off the bill if you go ahead with the repair. <strong>[If not credited:]</strong> It covers the diagnosis on its own, separate from any repair. I have <strong>[time]</strong> or <strong>[time]</strong>. Which works?”</p></blockquote>
+        <p><strong>After hours:</strong></p>
+        <blockquote><p>“Because this is after hours, our dispatch fee is <strong>[after-hours fee]</strong>. That covers <strong>[what it covers]</strong>. <strong>[If credited:]</strong> It comes off the bill if you go ahead with the repair. <strong>[If not credited:]</strong> It covers the visit on its own, separate from any repair. Are you okay with that fee if we can get you a real slot?”</p></blockquote>
         <ul class="checklist">
           <li><strong>Yes:</strong> log fee stated and acknowledged. Move on to checking capacity.</li>
-          <li><strong>No, or they hesitate:</strong> don’t argue. “Understood. Our regular-hours option is <strong>[next daytime option]</strong>. Want me to put you down for a call first thing?” If nothing books, log <code>declined_after_fee</code> and reason <code>E_fee_declined</code>.</li>
-          <li><strong>They want a repair price:</strong> “I can’t give an honest repair price without a tech seeing it. What I can tell you is the visit fee: <strong>[fee]</strong>.” If they won’t go ahead, the reason is <code>F_wanted_price_first</code>.</li>
-          <li><strong>You already talked about a truck and forgot the fee:</strong> stop. “Before we go further, I should have said this first: the after-hours fee is <strong>[fee]</strong>. Still want the visit?” Never leave the fee for the tech at the door.</li>
+          <li><strong>They push back:</strong> acknowledge once, say what it covers in one sentence, and offer a time. “I understand. That fee gets a tech out and covers finding the problem, and you get a written price before any work starts. I have <strong>[time]</strong>. Want it?” Don’t repeat the fee louder.</li>
+          <li><strong>Still no:</strong> don’t argue. “Understood. The next option I can offer is <strong>[next real option: a regular-hours slot, or a later time today]</strong>. Want me to put you down for it?” If nothing books, log <code>declined_after_fee</code> and reason <code>E_fee_declined</code>.</li>
+          <li><strong>You already talked about a truck and forgot the fee:</strong> stop. “Before we go further, I should have said this first: the fee is <strong>[fee]</strong>, and it covers <strong>[what it covers]</strong>. Still want the visit?” Never leave the fee for the tech at the door.</li>
         </ul>
 
-        <h2>2. Saying there’s no slot — honestly</h2>
+        <h2 id="price-first">2. When they want a price first</h2>
+        <p>Never answer with “we don’t quote over the phone” and nothing else. Ask first, then give what you honestly can, then offer a time. Keep your tone easy — the question is fair.</p>
+        <p><strong>Repair calls:</strong></p>
+        <blockquote><p>“Happy to help with pricing. Can I ask a couple of quick questions so I don’t guess wrong?”</p></blockquote>
+        <ol>
+          <li>“What’s it doing right now?”</li>
+          <li>“Do you know what kind of system it is, or about how old?”</li>
+          <li>“When did it start?”</li>
+        </ol>
+        <blockquote><p>“Thanks. I can’t give you an honest repair price until a tech sees it — a phone guess could be wrong either way. What I can tell you is the visit: <strong>[fee line from section 1, with what it covers and credited yes/no]</strong>. I have <strong>[time]</strong> or <strong>[time]</strong>. Which works?”</p></blockquote>
+        <p><strong>Replacement shoppers (pricing a new system):</strong></p>
+        <blockquote><p>“I can give you a rough idea. So I don’t guess wrong, can I ask a few quick questions about your home?”</p></blockquote>
+        <ol>
+          <li>“What’s going on with the system you have now?”</li>
+          <li>“Do you know what kind it is, or about how old?”</li>
+          <li>“About how big is the home, and how many floors?”</li>
+        </ol>
+        <blockquote><p><strong>[Only if your written rules include a range:]</strong> “For a home like that, replacements usually fall somewhere in <strong>[range from your written rules]</strong>. That’s a wide range on purpose. The real number depends on what we see in your home and the options you pick, and you get a written estimate after that look. Can I set up an in-home estimate visit? I have <strong>[time]</strong> or <strong>[time]</strong>. <strong>[Estimate visit: free, or fee per your written rules.]</strong>”</p></blockquote>
+        <p><strong>No range in your written rules?</strong> Skip it. Don’t guess. “The real number depends on a look at your home, and I’d rather not guess wrong. Can I set up an in-home estimate visit?”</p>
+        <p>If they still won’t go ahead without a price, log reason <code>F_wanted_price_first</code>.</p>
+
+        <p class="offer-honesty"><strong>Not legal advice.</strong> Fee disclosure rules vary by state. Check with your state contractor board or a lawyer before you settle your fee wording.</p>
+
+        <h2 id="no-slot">3. Saying there’s no slot — honestly</h2>
         <p>Only confirm a window after you (or the named booker) check real capacity. Stale, missing, or conflicting capacity means no verified slot.</p>
         <p><strong>If there’s a real slot:</strong></p>
         <blockquote><p>“I have a real window of <strong>[window the shop can keep]</strong>. I’ll put you in for that. You’ll get <strong>[callback / text]</strong> confirming. What’s the best number if the tech needs anything?”</p></blockquote>
@@ -53,7 +84,7 @@
         <p>Log <code>booked = N</code>, <code>no_verified_slot</code>, reason <code>G_no_slot_that_worked</code>. G is usually a capacity decision, so it’s the owner’s to look at on Friday, not the phone person’s fault.</p>
         <p><strong>If they’d rather wait for regular hours and nothing gets booked:</strong> reason <code>H_calling_back</code>, note “wants regular hours.” If a morning slot does go on the board, it’s booked and gets no code.</p>
 
-        <h2>3. Escalating</h2>
+        <h2 id="escalate">4. Escalating</h2>
         <blockquote><p>“This needs a named person on our side right away. I’m contacting <strong>[name/role]</strong> now with your address, the problem, the fee, and what we’ve agreed. You’ll hear from <strong>[them / us]</strong> at <strong>[callback number]</strong>.”</p></blockquote>
         <p>Hand off the full packet: address, issue, fee status, what the caller agreed to, callback number. The caller should know someone is on it, and who.</p>
 
