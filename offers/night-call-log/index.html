@@ -29,14 +29,14 @@
       <div class="prose">
         <h2>What’s in it</h2>
         <ul class="checklist">
-          <li><strong>Log tab</strong> — one row per contact. Dropdowns on <code>reason_code</code>, <code>outcome</code>, <code>capacity_check_status</code>, the Y/N columns, and the callback columns.</li>
+          <li><strong>Log tab</strong> — one row per contact. Dropdowns on <code>reason_code</code>, <code>outcome</code>, <code>capacity_check_status</code>, the Y/N columns, the callback columns, and the G list columns.</li>
           <li><strong>Weekly summary tab</strong> (.xlsx) — type a week start date. It counts calls, booked, each reason code, never-bookable vs. bookable-but-lost, and the booking rate.</li>
           <li><strong>One EXAMPLE row</strong>, highlighted, so you can see a filled line. Delete it before real use. The summary ignores it either way.</li>
         </ul>
         <h2>Callbacks</h2>
         <p>Some unbooked calls are still warm. Five columns track what happened when you called back: <code>callback_attempts</code>, <code>callback_owner</code>, <code>last_callback_at</code>, <code>callback_outcome</code>, and <code>ok_to_text</code>.</p>
         <ul class="checklist">
-          <li><strong>Who gets one:</strong> <code>H_calling_back</code> first. Then <code>E_fee_declined</code>, <code>F_wanted_price_first</code>, and <code>J_other_quotes</code>, if you have something new to offer: a clearer fee explanation, an opening, or a direct question about booking. Never A–D. G is a capacity question for Friday, and I depends on when the decider is around, so neither is on the callback list.</li>
+          <li><strong>Who gets one:</strong> <code>H_calling_back</code> first. Then <code>E_fee_declined</code>, <code>F_wanted_price_first</code>, and <code>J_other_quotes</code>, if you have something new to offer: a clearer fee explanation, an opening, or a direct question about booking. Never A–D. I depends on when the decider is around, so it isn’t on the callback list. G has its own list, below.</li>
           <li><strong>When:</strong> the same business day if you can, the next morning at the latest. During business hours. One named person owns the callbacks.</li>
           <li><strong>How many:</strong> three tries at most. That’s our suggestion, not a rule from anywhere. Stop right away if they say no or ask you to stop.</li>
           <li><strong>Outcome, one of four:</strong> Booked · Not booked (new code if the reason changed) · No answer after all tries · Asked not to be contacted. If an H turned into an E on the callback, change <code>reason_code</code> to E.</li>
@@ -45,10 +45,19 @@
         <p>The weekly tab counts callbacks attempted, each outcome, callbacks booked, attempted and booked for each of H, E, F, and J, and warm calls nobody called back.</p>
         <p><strong>Texting:</strong> this is not legal advice. FCC rules on texting customers depend on consent, and opt-outs have to be honored. The rules are changing and state rules differ, so ask a lawyer before you text customers. If someone says stop, in any clear way, it’s final — no call, no text.</p>
 
+        <h2>G callback list (no slot that worked)</h2>
+        <p>A G caller was ready to book and we had no slot that worked. Four columns turn those calls into a short list you can work when a slot opens: <code>g_job_type</code> (emergency, repair, maintenance, or install), <code>g_window_would_accept</code> (the window the caller said they’d accept, in their words), <code>g_date_added</code> (type it as <code>2026-11-02</code> style), and <code>g_offered_released_slot</code> (Y or N).</p>
+        <ul class="checklist">
+          <li><strong>One named owner.</strong> Write the owner in <code>callback_owner</code>, the same column as the other callbacks. Don’t tell a caller “we’ll call if something opens” unless that person checks the list.</li>
+          <li><strong>When a slot opens</strong> (a cancellation, or a held slot nobody claimed by your release time), call the top name first. Log the try in <code>callback_attempts</code> and <code>callback_outcome</code>, and put Y in <code>g_offered_released_slot</code> if you offered a released slot.</li>
+          <li><strong>It’s our suggestion.</strong> The callback list and the held slot are our suggestions, not a rule or a measured result. The <a href="../../offers/capacity-rules/">Weekly Capacity Rules</a> sheet is a one-page way to write down who owns the list and when held slots release.</li>
+        </ul>
+        <p>On the weekly tab, the G block counts G calls, G callbacks attempted and booked, and how many G callers were offered a released slot. Below it, a table counts G calls by weekday and job type, so on Friday you can see which days the G’s land on. It’s only your shop’s count. Compare two weeks before and two weeks after a change, and change one thing at a time.</p>
+
         <h2>Into Google Sheets</h2>
         <ol>
           <li><strong>Easiest:</strong> upload the .xlsx to Google Drive, then open it with Google Sheets (or File → Import → Upload in a blank sheet, choose “Replace spreadsheet”). Dropdowns and the summary tab come with it.</li>
-          <li><strong>CSV only:</strong> in a blank Google Sheet, File → Import → Upload → <code>night-call-log.csv</code> → “Replace current sheet.” Then add dropdowns yourself: select the <code>reason_code</code> column, Data → Data validation → Dropdown, and paste the eleven codes below. Do the same for <code>outcome</code>, <code>callback_attempts</code> (0, 1, 2, 3), and <code>callback_outcome</code> (the four outcomes above).</li>
+          <li><strong>CSV only:</strong> in a blank Google Sheet, File → Import → Upload → <code>night-call-log.csv</code> → “Replace current sheet.” Then add dropdowns yourself: select the <code>reason_code</code> column, Data → Data validation → Dropdown, and paste the eleven codes below. Do the same for <code>outcome</code>, <code>callback_attempts</code> (0, 1, 2, 3), <code>callback_outcome</code> (the four outcomes above), <code>g_job_type</code> (emergency, repair, maintenance, install), and <code>g_offered_released_slot</code> (Y, N).</li>
           <li>Type dates as <code>2026-10-12</code> style so the weekly tab can read them.</li>
           <li>Keep the sheet private. Don’t paste its link anywhere public.</li>
         </ol>
